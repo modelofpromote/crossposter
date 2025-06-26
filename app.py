@@ -5,7 +5,8 @@ import os
 app = FastAPI()
 
 TELEGRAM_TOKEN = "8024389457:AAFOuNZr9Nb29lCa99TCWfvGv3pub8BwqaM"
-CHAT_ID = "8024389457"  # Твой Telegram user ID, либо ID чата (если отправлять себе)
+CHAT_ID = 8024389457  # 5599230987
+
 
 @app.get("/")
 def root():
