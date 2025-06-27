@@ -12,8 +12,10 @@ CHAT_ID = 5599230987
 def root():
     return {"message": "Hello from FastAPI"}
 
-@app.get("/send")
-def send_message(message: str):
+@app.post("/send")
+async def send_message(request: Request):
+    data = await request.json()
+    message = data.get("message")
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     payload = {"chat_id": CHAT_ID, "text": message}
     response = requests.post(url, data=payload)
